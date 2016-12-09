@@ -1,0 +1,24 @@
+.done{
+	background-color: transparent;
+	color: lightgreen;
+}
+
+.params{
+	margin-top: 2vh;
+    padding-left: 5vw;
+    line-height: 2;
+    font-weight: 700;
+}
+
+.box{
+    padding: 1% 6%;
+}
+
+#form , #meter{
+	margin-bottom: 2vh;
+}
+
+:host{
+	margin-top: 10vh;
+    padding-left: 5vw;
+}

@@ -1,0 +1,24 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 box">
+	<div id="form">
+		<form #myform>
+			<fieldset>
+				<label>Password :</label>
+				<input name="pass" required type="text" [(ngModel)] = "pass" #passwordRef = "ngModel"
+				#password (input) = "input(password)" pattern = {{pattern.patternStrong}} >
+			</fieldset>
+		       
+		</form>
+	</div>
+	<div id="meter" *ngIf = "password.value !== ''">
+		{{pattern.strengthTitle}}
+		<meter  value="{{pattern.strengthValue}}">{{pattern.strengthPer}}</meter>
+	</div>
+    
+    <strong> Strong Password Validation Parameters</strong>
+	<div class="params">
+		<div >Uppercase <span *ngIf = "pattern.getupper(password.value)" class="glyphicon glyphicon-check  done aria-hidden='true'"></span></div>
+		<div >Lowercase <span *ngIf = "pattern.getlower(password.value)" class="glyphicon glyphicon-check  done aria-hidden='true'"></span></div>
+		<div >Special Character <span *ngIf = "pattern.getspecial(password.value)" class="glyphicon glyphicon-check  done aria-hidden='true'"></span></div>
+		<div >Number <span *ngIf = "pattern.getnum(password.value)" class="glyphicon glyphicon-check  done aria-hidden='true'" ></span></div>
+	</div>
+</div>
